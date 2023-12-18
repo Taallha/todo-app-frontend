@@ -1,3 +1,12 @@
 
 # todo-app-frontend
->>>>>>> 56cd0459c7d9cc78aa759bea1b2b3d9e12b69cc7
+
+## Summary 
+    -This project includes a simple todo application. Users can add, process, and update tasks.
+
+## Technologies
+
+- Frontend: React.js
+- Backend: Spring Boot (Java)
+
+
