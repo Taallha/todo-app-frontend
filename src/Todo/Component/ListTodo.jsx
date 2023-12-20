@@ -62,9 +62,9 @@ export default function ListTodo(){
 
     return(
         <div className="container">
-            <h1 className="mb-4">Your To-Do List</h1>
+            <h1 className="mb-4">To-Do List</h1>
             {message && <div className="alert alert-warning">{message}</div>}
-            <div>
+            <div className="mytable ">
                 <table className="table">
                 <thead>
                     <tr>

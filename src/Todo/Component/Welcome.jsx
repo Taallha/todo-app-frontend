@@ -43,10 +43,7 @@ export default function Welcome(){
             <div className="Welcome">
                 <h1>{username} welcome to our todo app </h1>
                 <div>
-                Manage your todos <Link to="/todos">todos</Link>
-                </div>
-                <div>
-                    <button className="btn mt-5 btn-success" onClick={callHelloWorldApi}> Get Hello-World REST-api </button>
+                Manage your  <Link to="/todos">todos</Link>
                 </div>
                 <div className="text-info mt-3">{message}</div>
 

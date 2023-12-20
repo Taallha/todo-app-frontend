@@ -2,11 +2,13 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../security/AuthContext";
 import { Card, Form, Button, Alert } from 'react-bootstrap';
+
 export default function Login(){
 
     const[username, setUsername] = useState('Talha');
     const[password, setPassword] = useState('');
     const[errorMessage, setErrorMessage] = useState(false)
+    const[message, setMessage] = useState("")
     const navigate = useNavigate();
     const authContext = useAuth()
 
@@ -19,6 +21,7 @@ export default function Login(){
 
         }else {
             setErrorMessage(true)
+            setMessage("Kullanıcı adı veya parolanız yanlış !")
             
         }
         
@@ -90,19 +93,19 @@ export default function Login(){
         <div className="Login d-flex align-items-center justify-content-center">
             <Card className="custom-card">
                 <Card.Body>
-                    {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
+                    {errorMessage && <Alert variant="danger">{message}</Alert>}
                     <Form>
                         <Form.Group className="mb-3">
-                            <Form.Label className="fw-bold text-dark">User Name:</Form.Label>
+                            <Form.Label className="fw-bold text-dark">Name</Form.Label>
                             <Form.Control type="text" name="Username" value={username} onChange={handleUsernameChange} />
                         </Form.Group>
 
                         <Form.Group className="mb-3">
-                            <Form.Label className="fw-bold text-dark">Password:</Form.Label>
+                            <Form.Label className="fw-bold text-dark">Password</Form.Label>
                             <Form.Control type="password" name="password" value={password} onChange={handlePasswordChange} />
                         </Form.Group>
 
-                        <Button className="m-3"variant="primary" type="button" onClick={handleSubmit}>
+                        <Button className="m-3 btn-primary"variant="primary" type="button" onClick={handleSubmit}>
                             Submit
                         </Button>
                     </Form>

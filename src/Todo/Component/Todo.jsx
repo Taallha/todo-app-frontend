@@ -18,11 +18,11 @@ export default function Todo(){
     useEffect(() => retrieveTodo())
     
     
-    function retrieveTodo(){
+     function retrieveTodo(){
         if(id != -1 ){
             console.log(username,id)
             retrieveTodoApi(username,id)
-            .then(
+             .then(
                 (response) =>
                 {
                     setDescription(response.data.description)
@@ -35,7 +35,7 @@ export default function Todo(){
 
         }       
     }
-    function onSubmit(values){
+    async function onSubmit(values){
         console.log(values)
         const todo = {
             id : id,
@@ -46,7 +46,7 @@ export default function Todo(){
         }
         if(id == -1){
 
-            createTodoApi(username,todo)
+            await createTodoApi(username,todo)
             .then((response)=>
             console.log(response),
             Navigate("/todos")
